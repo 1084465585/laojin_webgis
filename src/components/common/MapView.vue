@@ -31,7 +31,8 @@ export default {
         map: map,
         zoom: 5,
       });
-      console.log(view);
+      this.$store.commit('_setDefaultMapView', view);
+      console.log(this.$store.getters._getDefaultMapView);
     },
   },
 };

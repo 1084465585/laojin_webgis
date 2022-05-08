@@ -21,7 +21,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "esri-loader": "^3.5.0",
     "vue-router": "^3.5.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuex": "^3.6.2"
   },
   "eslintConfig": {
     "root": true,

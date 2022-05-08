@@ -6,6 +6,7 @@
 export default {
   name: 'DataVisual',
   components: {},
+  methods: {},
 };
 </script>
 
@@ -15,4 +16,4 @@ export default {
   width: 100%;
   background-color: bisque;
 }
-</style>  
+</style>
