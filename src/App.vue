@@ -77,6 +77,9 @@ body,
 .app-content-pannel {
   height: 100%;
 }
+.app-content-pannel {
+  position: relative;
+}
 .sys-header {
   background-color: #303133;
   line-height: 60px;
