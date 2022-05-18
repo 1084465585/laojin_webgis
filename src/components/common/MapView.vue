@@ -70,7 +70,7 @@ export default {
       view.ui.add(scaleBar);
 
       this.$store.commit('_setDefaultMapView', view);
-      console.log(this.$store.getters._getDefaultMapView);
+      // console.log(this.$store.getters._getDefaultMapView);
     },
   },
 };

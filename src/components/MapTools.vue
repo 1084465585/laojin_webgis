@@ -1,15 +1,38 @@
 <template>
   <div class="maptools-view">
-    <span class="maptools-item">行政区划导航</span>
-    <span class="maptools-item">距离测量</span>
-    <span class="maptools-item">面积测量</span>
-    <span class="maptools-item">清屏</span>
+    <span class="maptools-item" @click="handleMapToolsItemClick" id="xzqh">行政区划导航</span>
+    <span class="maptools-item" @click="handleMapToolsItemClick" id="maptree">目录树管理</span>
+    <span class="maptools-item" @click="handleMapToolsItemClick">距离测量</span>
+    <span class="maptools-item" @click="handleMapToolsItemClick">面积测量</span>
+    <span class="maptools-item" @click="handleMapToolsItemClick" id="clear">清屏</span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'MapTools',
+  methods: {
+    handleMapToolsItemClick(e) {
+      console.log(e.target.id);
+      switch (e.target.id) {
+        case 'xzqh':
+          break;
+        case 'maptree':
+          this.openMapTreePannel();
+          break;
+        case 'clear':
+          break;
+        default:
+          break;
+      }
+    },
+    openMapTreePannel() {
+      let mapTreePannelVisible = this.$store.getters._getDefaultMapTreeVisible;
+      console.log(mapTreePannelVisible);
+      this.$store.commit('_setDefaultMapTreeVisible', !mapTreePannelVisible);
+      console.log(this.$store.getters._getDefaultMapTreeVisible);
+    },
+  },
 };
 </script>
 
