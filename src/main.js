@@ -5,7 +5,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue'
 import router from './../router/router'
 import store from './store/index'
-
+import esriConfig from "@arcgis/core/config";
+esriConfig.assetsPath = "./assets";
+import '@arcgis/core/assets/esri/themes/light/main.css';
+Vue.config.silent = true
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 

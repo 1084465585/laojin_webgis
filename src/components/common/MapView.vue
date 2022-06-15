@@ -7,12 +7,18 @@
 
 <script>
 //引入loadModules
-import { loadModules } from 'esri-loader';
-const options = {
-  //引入ArcGIS API
-  url: 'https://js.arcgis.com/4.18/init.js',
-  css: 'https://js.arcgis.com/4.18/esri/themes/light/main.css',
-};
+// import { loadModules } from 'esri-loader';
+// const options = {
+//   //引入ArcGIS API
+//   url: 'https://js.arcgis.com/4.18/init.js',
+//   css: 'https://js.arcgis.com/4.18/esri/themes/light/main.css',
+// };
+import Map from '@arcgis/core/Map';
+import MapView from '@arcgis/core/views/MapView';
+import Basemap from '@arcgis/core/Basemap';
+import TileLayer from '@arcgis/core/layers/TileLayer';
+import BasemapToggle from '@arcgis/core/widgets/BasemapToggle';
+import ScaleBar from '@arcgis/core/widgets/ScaleBar';
 export default {
   name: 'MapView',
   components: {},
@@ -23,18 +29,18 @@ export default {
   methods: {
     //   创建地图视图
     //async await是成对出现的，意思是把那些模块加载完成之后才可以执行后面的代码
-    async _createMapView() {
-      const [Map, MapView, Basemap, TileLayer, BasemapToggle, ScaleBar] = await loadModules(
-        [
-          'esri/Map',
-          'esri/views/MapView',
-          'esri/Basemap',
-          'esri/layers/TileLayer',
-          'esri/widgets/BasemapToggle',
-          'esri/widgets/ScaleBar',
-        ],
-        options,
-      );
+    _createMapView() {
+      // const [Map, MapView, Basemap, TileLayer, BasemapToggle, ScaleBar] = await loadModules(
+      //   [
+      //     'esri/Map',
+      //     'esri/views/MapView',
+      //     'esri/Basemap',
+      //     'esri/layers/TileLayer',
+      //     'esri/widgets/BasemapToggle',
+      //     'esri/widgets/ScaleBar',
+      //   ],
+      //   options,
+      // );
       let basemap = new Basemap({
         baseLayers: [
           new TileLayer({

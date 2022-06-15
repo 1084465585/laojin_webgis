@@ -6,13 +6,14 @@
 
 <script>
 //引入loadModules
-import { loadModules } from 'esri-loader';
-const options = {
-  //引入ArcGIS API
-  url: 'https://js.arcgis.com/4.18/init.js',
-  css: 'https://js.arcgis.com/4.18/esri/themes/light/main.css',
-};
-
+// import { loadModules } from 'esri-loader';
+// const options = {
+//   //引入ArcGIS API
+//   url: 'https://js.arcgis.com/4.18/init.js',
+//   css: 'https://js.arcgis.com/4.18/esri/themes/light/main.css',
+// };
+import TileLayer from '@arcgis/core/layers/TileLayer';
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 export default {
   name: 'MapTree',
   data() {
@@ -72,17 +73,17 @@ export default {
     };
   },
   methods: {
-    async handleNodeClick(data) {
+    handleNodeClick(data) {
       if (data.layerurl) {
         //删除已添加的图层
         const view = this.$store.getters._getDefaultMapView;
         const resultLayer = view.map.findLayerById('layerid');
         if (resultLayer) view.map.remove(resultLayer);
         //处理不同服务类型
-        const [TileLayer, FeatureLayer] = await loadModules(
-          ['esri/layers/TileLayer', 'esri/layers/FeatureLayer'],
-          options,
-        );
+        // const [TileLayer, FeatureLayer] = await loadModules(
+        //   ['esri/layers/TileLayer', 'esri/layers/FeatureLayer'],
+        //   options,
+        // );
         const c = data.layerurl.split('/');
         const serverType = c[c.length - 1];
         let layer = '';

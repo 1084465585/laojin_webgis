@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const state = {
     _defaultMapView: '', //默认地图view
-    _defaultMapTreeVisible: ''//控制maptree控件的显隐
+    _defaultMapTreeVisible: '',//控制maptree控件的显隐
+    _defaultXZQHComponentVisible: ''//控制行政区划导航控件的显隐
 }
 
 const getters = {
@@ -14,6 +15,9 @@ const getters = {
     },
     _getDefaultMapTreeVisible() {
         return state._defaultMapTreeVisible
+    },
+    _getDefaultXZQHComponentVisible() { //控制行政区划导航控件的显隐
+        return state._defaultXZQHComponentVisible
     }
 }
 const mutations = {
@@ -22,7 +26,10 @@ const mutations = {
     },
     _setDefaultMapTreeVisible(state, value) {
         state._defaultMapTreeVisible = value
-    }
+    },
+    _setDefaultXZQHComponentVisible(state, value) { //控制行政区划导航控件的显隐
+        state._defaultXZQHComponentVisible = value
+    },
 }
 
 const store = new Vuex.Store({

@@ -16,6 +16,7 @@ export default {
       console.log(e.target.id);
       switch (e.target.id) {
         case 'xzqh':
+          this.openXZQHComponentPannel();
           break;
         case 'maptree':
           this.openMapTreePannel();
@@ -31,6 +32,10 @@ export default {
       console.log(mapTreePannelVisible);
       this.$store.commit('_setDefaultMapTreeVisible', !mapTreePannelVisible);
       console.log(this.$store.getters._getDefaultMapTreeVisible);
+    },
+    openXZQHComponentPannel() {
+      let XZQHComponentPannel = this.$store.getters._getDefaultXZQHComponentVisible;
+      this.$store.commit('_setDefaultXZQHComponentVisible', !XZQHComponentPannel);
     },
   },
 };
